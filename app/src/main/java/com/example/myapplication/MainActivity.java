@@ -1,6 +1,9 @@
 package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import android.app.Service;
+import android.content.Intent;
 import android.os.Bundle;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
@@ -64,8 +67,8 @@ public class MainActivity extends AppCompatActivity
                 Sensor.TYPE_ACCELEROMETER);
 
         //sensorManager.registerListener(this, accel, SensorManager.SENSOR_DELAY_NORMAL);
-        //sensorManager.registerListener(this, accel, SensorManager.SENSOR_DELAY_FASTEST);
-        sensorManager.registerListener(this, accel, SensorManager.SENSOR_DELAY_GAME);
+        sensorManager.registerListener(this, accel, SensorManager.SENSOR_DELAY_FASTEST);
+        //sensorManager.registerListener(this, accel, SensorManager.SENSOR_DELAY_GAME);
         //
 
     }
@@ -172,6 +175,10 @@ public class MainActivity extends AppCompatActivity
         textInfo.setText(info);
     }
 
+//    @Override
+//    public void onBind(Intent:Intent){
+//
+//    }
     @Override
     public void onAccuracyChanged(Sensor sensor, int accuracy) {
 
